@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title><%= clubName%>'s Recent Matches</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--================================================================
+        Scripts
+    =================================================================-->
+    <link rel="stylesheet" href="assets/css/normalise.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+    <!--================================================================
+        Navigation Bar
+    =================================================================-->
+    <nav id="navbar">
+        <!--sidebar button-->
+        <% if (log == false) { %>
+            <a><span id="openbt">&#9776;</span></a>
+            <img src="images/logoBar.png" >
+            <a href="/register" class="rightsideText">Sign Up</a>
+            <a href="/login" class="rightsideText">Log in</a>
+        <% } else {%>
+            <a><span id="openbt">&#9776;</span></a>
+            <img src="images/logoBar.png" >
+            <a href="/profile" class="rightsideText">Profile:<%= user %></a>
+        <% } %>
+    </nav>
+    <!--================================================================
+        Side Bar
+    =================================================================-->
+    <div id="mySidenav" class="sidenav">
+
+        <a href="#" id="close">&times;</a>
+        <a href="/@Arsenal">Arsenal </a>
+        <a href="/@Aston Villa">Aston Villa </a>
+        <a href="/@Brighton">Brighton </a>
+        <a href="/@Burnley">Burnley </a>
+        <a href="/@Chelsea">Chelsea </a>
+        <a href="/@Crystal Palace">Crystal Palace </a>
+        <a href="/@Everton">Everton </a>
+        <a href="/@Fulham">Fulham </a>
+        <a href="/@Leeds">Leeds </a>
+        <a href="/@Leicester">Leicester </a>
+        <a href="/@Liverpool">Liverpool </a>
+        <a href="/@Manchester City">Manchester City </a>
+        <a href="/@Manchester United">Manchester United </a>
+        <a href="/@Newcastle">Newcastle </a>
+        <a href="/@Sheffield United">Sheffield United </a>
+        <a href="/@Southampton">Southampton </a>
+        <a href="/@Tottenham">Tottenham </a>
+        <a href="/@West Brom">West Brom </a>
+        <a href="/@West Ham">West Ham </a>
+        <a href="/@Wolves">Wolves </a>
+    </div>
+    <!--================================================================
+        Intro/Logo
+    =================================================================-->
+    <div id="banner">
+        <p>A repository for reporting sports results</p>
+    </div>
+    <!--================================================================
+        Banner
+    =================================================================-->
+    <div id="matchbanner">
+        <div class="inner split2">
+            <div>
+                <h2>MOST RECENT MATCH</h2>
+            </div>
+            <div>
+                <h2><%= dates[0] %>: <img src=images/<%= TeamA[0] %>Icon.svg width='50px' height='50px' /><%= matchData[0] %><img src=images/<%= TeamB[0] %>Icon.svg width='50px' height='50px' /></h2>
+            </div>
+        </div>
+    </div>
+    <!--================================================================
+        Previous Matches
+    =================================================================-->
+    <div id="previousmatches" class="wrapper">
+        <h2>Previous match scores</h2>
+        <div class="inner split4">
+            <div>
+                <ul class="checklist">
+                    <li><b>Date Of Match</b></li>
+                    <li><%= dates[1] %></li>
+                    <li><%= dates[2] %></li>
+                    <li><%= dates[3] %></li>
+                    <li><%= dates[4] %></li>
+                    <li><%= dates[5] %></li>
+                    <li><%= dates[6] %></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="checklist">
+                    <li><b>Home vs Away</b></li>
+                    <li><img src=images/<%= TeamA[1] %>Icon.svg width='25px' height='25px' /><%= matchData[1] %><img src=images/<%= TeamB[1] %>Icon.svg width='25px' height='25px' /></li>
+                    <li><img src=images/<%= TeamA[2] %>Icon.svg width='25px' height='25px' /><%= matchData[2] %><img src=images/<%= TeamB[2] %>Icon.svg width='25px' height='25px' /></li>
+                    <li><img src=images/<%= TeamA[3] %>Icon.svg width='25px' height='25px' /><%= matchData[3] %><img src=images/<%= TeamB[3] %>Icon.svg width='25px' height='25px' /></li>
+                    <li><img src=images/<%= TeamA[4] %>Icon.svg width='25px' height='25px' /><%= matchData[4] %><img src=images/<%= TeamB[4] %>Icon.svg width='25px' height='25px' /></li>
+                    <li><img src=images/<%= TeamA[5] %>Icon.svg width='25px' height='25px' /><%= matchData[5] %><img src=images/<%= TeamB[5] %>Icon.svg width='25px' height='25px' /></li>
+                    <li><img src=images/<%= TeamA[6] %>Icon.svg width='25px' height='25px' /><%= matchData[6] %><img src=images/<%= TeamB[6] %>Icon.svg width='25px' height='25px' /></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="checklist">
+                    <li><b>Date Of Match</b></li>
+                    <li><%= dates[7] %></li>
+                    <li><%= dates[8] %></li>
+                    <li><%= dates[9] %></li>
+                    <li><%= dates[10] %></li>
+                    <li><%= dates[11] %></li>
+                    <li><%= dates[12] %></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="checklist">
+                    <li><b>Home vs Away</b></li>
+                    <li><img src=images/<%= TeamA[7] %>Icon.svg width='25px' height='25px' /><%= matchData[7] %><img src=images/<%= TeamB[7] %>Icon.svg width='25px' height='25px' /></li>
+                    <li><img src=images/<%= TeamA[8] %>Icon.svg width='25px' height='25px' /><%= matchData[8] %><img src=images/<%= TeamB[8] %>Icon.svg width='25px' height='25px' /></li>
+                    <li><img src=images/<%= TeamA[9] %>Icon.svg width='25px' height='25px' /><%= matchData[9] %><img src=images/<%= TeamB[9] %>Icon.svg width='25px' height='25px' /></li>
+                    <li><img src=images/<%= TeamA[10] %>Icon.svg width='25px' height='25px' /><%= matchData[10] %><img src=images/<%= TeamB[10] %>Icon.svg width='25px' height='25px' /></li>
+                    <li><img src=images/<%= TeamA[11] %>Icon.svg width='25px' height='25px' /><%= matchData[11] %><img src=images/<%= TeamB[11] %>Icon.svg width='25px' height='25px' /></li>
+                    <li><img src=images/<%= TeamA[12] %>Icon.svg width='25px' height='25px' /><%= matchData[12] %><img src=images/<%= TeamB[12] %>Icon.svg width='25px' height='25px' /></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--================================================================
+        News/Updates Section
+    =================================================================-->
+    <% if(clubName != "All Clubs") { %>
+    <div id="news" class="wrapper newsbox alt">
+        <div class="inner">
+            <div class="spotlight">
+                <div class="image">
+                    <img src="images/pic01.jpg" alt="" />
+                </div>
+                <div class="content">
+                    <p><a href="/s<%=clubName %>" class="button alt">See the past matches from this season.</a></p>
+                </div>
+            </div>
+            <div class="spotlight">
+                <div class="image">
+                    <img src="images/pic02.jpg" alt="" />
+                </div>
+                <div class="content">
+                    <p><a href="/t<%=clubName %>" class="button alt">See the players that played this season.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <!--================================================================
+        Footer
+    =================================================================-->
+    <footer id="footer">
+        <div class="minifooter">
+            <a>By Robert</a>
+        </div>
+    </footer>
+</body>
+</html>

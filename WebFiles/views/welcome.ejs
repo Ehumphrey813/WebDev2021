@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Welcome <%= user %></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--================================================================
+        Scripts
+    =================================================================-->
+    <link rel="stylesheet" href="assets/css/normalise.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+    <!--================================================================
+        Navigation Bar
+    =================================================================-->
+    <nav id="navbar">
+        
+        <% if (user == null) { %>
+            <a href="/@all">Click Here to See Match Results</a>
+            <a href="/register" class="rightsideText">Sign Up</a>
+            <a href="/login" class="rightsideText">Log in</a>
+        <% } else {%>
+            <a href="/@all">Click Here to See Match Results</a>
+            <a href="/profile" class="rightsideText">Profile:<%= user %></a>
+        <% } %>
+        
+    </nav>
+    <!--================================================================
+        Intro/Logo
+    =================================================================-->
+    <div id="banner">
+        <!--  <h2>LOGO? WEBSITE NAME?</h2> -->
+        <img src="images/logo.png" class="logo" alt="Football logo">
+        <p>A repository for reporting sports results</p>
+    </div>
+    <!--================================================================
+        Previous Matches
+    =================================================================-->
+    <div id="previousmatches" class="wrapper">
+        <h2>Recent Match Results</h2>
+        <div class="inner split2">
+            <div>
+                <ul class="checklist">
+                    <li><%= data[0] %></li>
+                    <li><%= data[1] %></li>
+                    <li><%= data[2] %></li>
+                    <li><%= data[3] %></li>
+                    <li><%= data[4] %></li>
+                    <li><%= data[5] %></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="checklist">
+                    <li><%= data[6] %></li>
+                    <li><%= data[7] %></li>
+                    <li><%= data[8] %></li>
+                    <li><%= data[9] %></li>
+                    <li><%= data[10] %></li>
+                    <li><%= data[11] %></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
